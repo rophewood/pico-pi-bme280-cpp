@@ -1,0 +1,13 @@
+add_subdirectory(BME280_driver)
+
+set(SOURCES 
+    ${SOURCES}
+    ${CMAKE_CURRENT_SOURCE_DIR}/BME280.cpp
+    PARENT_SCOPE
+)
+
+set(HEADERS
+    ${HEADERS}
+    ${CMAKE_CURRENT_SOURCE_DIR}/BME280.hpp
+    PARENT_SCOPE
+)
