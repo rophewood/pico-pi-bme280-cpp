@@ -118,15 +118,15 @@ bool Sensors::BME280::init(i2c_inst_t* i2c, uint8_t dev_addr, uint sda_pin, uint
 
     /* Recommended mode of operation: Indoor navigation */
     dev.settings.osr_h = BME280_OVERSAMPLING_1X;
-	dev.settings.osr_p = BME280_OVERSAMPLING_16X;
-	dev.settings.osr_t = BME280_OVERSAMPLING_2X;
-	dev.settings.filter = BME280_FILTER_COEFF_16;
+    dev.settings.osr_p = BME280_OVERSAMPLING_16X;
+    dev.settings.osr_t = BME280_OVERSAMPLING_2X;
+    dev.settings.filter = BME280_FILTER_COEFF_16;
 
-	settings_sel = BME280_OSR_PRESS_SEL;
-	settings_sel |= BME280_OSR_TEMP_SEL;
-	settings_sel |= BME280_OSR_HUM_SEL;
-	settings_sel |= BME280_FILTER_SEL;
-	rslt = bme280_set_sensor_settings(settings_sel, &dev);
+    settings_sel = BME280_OSR_PRESS_SEL;
+    settings_sel |= BME280_OSR_TEMP_SEL;
+    settings_sel |= BME280_OSR_HUM_SEL;
+    settings_sel |= BME280_FILTER_SEL;
+    rslt = bme280_set_sensor_settings(settings_sel, &dev);
     if (rslt != BME280_OK)
     {
         printf("Failed to set sensor settings (code %+d).", rslt);

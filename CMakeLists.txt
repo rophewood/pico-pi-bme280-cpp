@@ -19,8 +19,8 @@ add_compile_options(-Wall
 add_subdirectory(BME280)
 add_executable(${PROJECT_NAME}
         ${SOURCES}
-	${HEADERS}
-	main.cpp
+        ${HEADERS}
+        main.cpp
  )
 
 # Add pico_multicore which is required for multicore functionality
@@ -28,7 +28,7 @@ target_link_libraries(${PROJECT_NAME}
         pico_stdlib
         hardware_i2c
 )
-		
+        
 target_include_directories(${PROJECT_NAME} PUBLIC 
         BME280
 )
